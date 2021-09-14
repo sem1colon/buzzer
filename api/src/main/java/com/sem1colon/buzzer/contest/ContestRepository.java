@@ -1,6 +1,5 @@
-package com.sem1colon.buzzer.repository;
+package com.sem1colon.buzzer.contest;
 
-import com.sem1colon.buzzer.entity.Contest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
