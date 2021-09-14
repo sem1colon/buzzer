@@ -1,8 +1,12 @@
 package com.sem1colon.buzzer.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
+@Entity
 public class Contest {
+    @Id
     private String id;
     private String host;
 
@@ -30,6 +34,4 @@ public class Contest {
                 ", host='" + host + '\'' +
                 '}';
     }
-
-
 }

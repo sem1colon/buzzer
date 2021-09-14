@@ -1,53 +1,48 @@
 package com.sem1colon.buzzer.controller;
 
 import com.sem1colon.buzzer.entity.Contest;
+import com.sem1colon.buzzer.service.ContestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 @RequestMapping("/api/v1/contest")
 public class ContestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ContestController.class);
-    private HashSet<Contest> contests = new HashSet<>();
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContestController.class);
+
+    private ContestService contestService;
+
+    @Autowired
+    public ContestController(ContestService contestService) {
+        this.contestService = contestService;
+    }
 
     @GetMapping("/create")
     public ResponseEntity<?> createContest() {
         try {
-            logger.info("createContest(): start");
-            Contest contest = new Contest();
-            String contestId;
-            do {
-                contestId = generateContestId();
-            } while (!contests.contains(contestId));
-            contest.setId(contestId);
-            contests.add(contestId);
-            logger.debug("contest created - ", contest.getId());
+            LOGGER.info("createContest() - Start");
+            Contest contest = contestService.createContest();
             ResponseEntity response = new ResponseEntity<Contest>(contest, HttpStatus.OK);
-            logger.info("createContest(): exit");
+            LOGGER.info("createContest() - Exit");
             return response;
         } catch (Exception ex) {
-            logger.error(ex.getMessage());
-            return new ResponseEntity<String>("System Error! :(", HttpStatus.INTERNAL_SERVER_ERROR);
+            LOGGER.error(ex.getMessage());
+            return new ResponseEntity("System Error! :(", HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
     }
 
-    private String generateContestId() {
-        return String.format("%04d", new Random().nextInt(10000));
-    }
-
     @PostMapping("/join")
     public ResponseEntity<?> joinContest(Contest contest) {
-
+        return null;
     }
 }
