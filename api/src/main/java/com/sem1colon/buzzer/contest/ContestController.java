@@ -25,12 +25,12 @@ public class ContestController {
         this.contestService = contestService;
     }
 
-    @GetMapping("/create")
-    public ResponseEntity<?> createContest() {
+    @PostMapping("/create")
+    public ResponseEntity<?> createContest(@RequestBody Contest contest) {
         try {
             LOGGER.info("createContest() - Start");
-            Contest contest = contestService.createContest();
-            responseEntity = new ResponseEntity<Contest>(contest, HttpStatus.OK);
+            Contest createdContest = contestService.createContest(contest);
+            responseEntity = new ResponseEntity<Contest>(createdContest, HttpStatus.OK);
             LOGGER.info("createContest() - Exit");
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage());

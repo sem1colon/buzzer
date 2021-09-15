@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.Optional;
 import java.util.Random;
 
@@ -25,15 +26,16 @@ public class ContestService {
         this.contestantRepository = contestantRepository;
     }
 
-    public Contest createContest() {
+    public Contest createContest(Contest contest) {
         LOGGER.info("createContest() - Start");
-        Contest contest = new Contest();
         String contestId;
         do {
             contestId = generateContestId();
         } while (contestRepository.existsById(contestId));
+        if(contest.getName() == null || contest.getName().isEmpty()) {
+            contest.setName(contest.getHost() + "'s contest");
+        }
         contest.setId(contestId);
-        contest.setHost("default");
         LOGGER.debug("Contest {} created!", contest.getId());
         contestRepository.save(contest);
         LOGGER.info("createContest() - Exit");
