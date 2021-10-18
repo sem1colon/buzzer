@@ -1,3 +1,3 @@
 # Buzzinga
-The simple online buzzer system!!!
+The simple online buzzer system...
 
