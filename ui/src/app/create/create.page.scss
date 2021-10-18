@@ -1,0 +1,30 @@
+.center {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .center-text {
+    display: block;
+    text-align: center;
+  }
+  
+  .center-wide {
+    width: 80%;
+    margin: 10%;
+  }
+
+  .input-label {
+      color: red;
+      font-size: smaller;
+  }
+
+  .title {
+      font-weight: bold;
+      font-size: larger;
+  }
+
+  .button {
+    width: 80%;
+    margin: 10%;
+    color: white;
+  }
