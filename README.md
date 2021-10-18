@@ -1,4 +1,4 @@
-# Buzzinga
+# Buzzinga!
 The simple online buzzer system!
 
 ## How to Play?_(It's Simple!)_
