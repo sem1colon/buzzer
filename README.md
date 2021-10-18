@@ -1,2 +1,3 @@
-# Buzzer
+# Buzzinga
 The simple online buzzer system!
+
