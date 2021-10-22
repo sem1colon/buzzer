@@ -9,5 +9,5 @@ The simple online buzzer system!
 * **Participants** can join the contest using the _code_.
 
 ## Tech Stack
-## This is Thailava
+## This is Dhoni
 This application is made using **Ionic** as front-end, **Spring-Boot** as back-end and **H2** as database.
