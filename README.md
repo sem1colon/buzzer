@@ -10,4 +10,4 @@ The simple online buzzer system!
 
 ## Tech Stack
 
-This application is made using **Ionic** as front-end, **Spring-Boot** as back-end and **H2** as database.
+This project is made using **Ionic** as front-end, **Spring-Boot** as back-end and **H2** as database.
