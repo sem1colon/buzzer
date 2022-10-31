@@ -3,7 +3,7 @@
 The simple online buzzer system!
 
 ## How to Play?
-_It's Simple!_
+It's Simple!
 
 * *Host* creates a contest. 
 * A _contest code_ is generated on host page.
