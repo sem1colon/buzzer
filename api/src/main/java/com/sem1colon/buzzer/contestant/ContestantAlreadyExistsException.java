@@ -1,5 +1,6 @@
 package com.sem1colon.buzzer.contestant;
 
+//created Custom Exception class
 public class ContestantAlreadyExistsException extends Exception {
     private String message;
 
