@@ -11,12 +11,11 @@ The Buzzer UI provides:
 - **Real-time buzzer functionality** - Interactive buzzer interface for competitive events
 
 ## Tech Stack
-
-- **Ionic 5.5.2** - Cross-platform mobile app framework
-- **Angular 12.1.1** - Frontend framework
-- **TypeScript 4.2.4** - Programming language
-- **Capacitor 3.2.2** - Native runtime for web apps
-- **Bootstrap 5.1.1** - CSS framework for styling
+- **Ionic 8** - Cross-platform mobile app framework
+- **Angular 18** - Frontend framework
+- **TypeScript 5** - Programming language
+- **Capacitor 6** - Native runtime for web apps
+- **Bootstrap 5** - CSS framework for styling
 - **RxJS 6.6.0** - Reactive programming library
 
 ## Project Structure
@@ -92,7 +91,7 @@ The application will be available at: `http://localhost:8100`
 
 - `npm start` - Start development server
 - `npm run build` - Build the project for production
-- `npm test` - Run unit tests with Karma
+- `npm test` - Run unit tests with Karma and Jasmine
 - `npm run lint` - Run ESLint for code quality
 - `npm run e2e` - Run end-to-end tests
 
@@ -199,11 +198,11 @@ npm test -- --code-coverage
 
 ### End-to-End Tests
 ```bash
-# Run e2e tests
+# Run e2e tests with Cypress
 npm run e2e
 
-# Run e2e tests headlessly
-npm run e2e -- --headless
+# Open the Cypress test runner
+npm run e2e:open
 ```
 
 ## Development Guidelines
